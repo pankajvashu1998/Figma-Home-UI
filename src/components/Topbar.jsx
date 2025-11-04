@@ -11,6 +11,7 @@ import { IoIosAdd } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
+import { FaQuestion } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function TopBar({ setSideBar, sideBar }) {
@@ -18,11 +19,9 @@ export default function TopBar({ setSideBar, sideBar }) {
 
   return (
     <div className="relative w-full ">
-      {/* Floating Toggle Button */}
-      <button className="fixed bottom-6  right-6 z-50 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-blue-700 transition">
-        {open ? <IoClose /> : <FiMenu />}
+      <button className="fixed bottom-7 right-7 z-50 h-8 w-8 rounded-full bg-black flex justify-center items-center text-white">
+        <FaQuestion />
       </button>
-
       {/* TopBar */}
       <div
         className={`bg-white sticky top-0 z-50 border-b border-gray-200 px-4 py-3  w-full transition-all duration-300 ${
@@ -38,7 +37,7 @@ export default function TopBar({ setSideBar, sideBar }) {
             >
               <FaBars />
             </span>
-            <h1 className="text-sm sm:text-base font-medium">Recents</h1>
+            <h1 className="text-[14px] ">Recents</h1>
           </div>
 
           {/* Right Side */}
@@ -46,7 +45,7 @@ export default function TopBar({ setSideBar, sideBar }) {
             <div className="flex flex-wrap items-center justify-between gap-2">
               <ul className="flex flex-wrap justify-start text-[12px] items-center gap-2">
                 {/* Design */}
-                <li className="px-4 py-2 rounded-2xl bg-gray-200 flex items-center gap-1 cursor-pointer group transition">
+                <li className="px-4 py-2 rounded-2xl bg-gray-100 flex items-center gap-1 cursor-pointer group transition">
                   <span className="text-md p-0.5 bg-blue-500 text-white rounded-sm relative w-5 h-5 flex items-center justify-center">
                     <FiPenTool className="group-hover:hidden" />
                     <IoIosAdd className="hidden group-hover:block text-white text-lg" />
@@ -55,7 +54,7 @@ export default function TopBar({ setSideBar, sideBar }) {
                 </li>
 
                 {/* FigJam */}
-                <li className="px-4 py-2 rounded-2xl bg-gray-200 flex items-center gap-1 cursor-pointer group transition">
+                <li className="px-4 py-2 rounded-2xl bg-gray-100 flex items-center gap-1 cursor-pointer group transition">
                   <span className="text-md p-0.5 bg-purple-400 text-white rounded-sm relative w-5 h-5 flex items-center justify-center">
                     <GrDocument className="group-hover:hidden" />
                     <IoIosAdd className="hidden group-hover:block text-white text-lg" />
@@ -64,7 +63,7 @@ export default function TopBar({ setSideBar, sideBar }) {
                 </li>
 
                 {/* Slides */}
-                <li className="px-4 py-2 rounded-2xl bg-gray-200 flex items-center gap-1 cursor-pointer group transition">
+                <li className="px-4 py-2 rounded-2xl bg-gray-100 flex items-center gap-1 cursor-pointer group transition">
                   <span className="text-md p-0.5 bg-orange-400 text-white rounded-sm relative w-5 h-5 flex items-center justify-center">
                     <TfiBlackboard className="group-hover:hidden" />
                     <IoIosAdd className="hidden group-hover:block text-white text-lg" />
@@ -73,7 +72,7 @@ export default function TopBar({ setSideBar, sideBar }) {
                 </li>
 
                 {/* Buzz */}
-                <li className="px-4 py-2 rounded-2xl bg-gray-200 flex items-center gap-1 cursor-pointer group transition">
+                <li className="px-4 py-2 rounded-2xl bg-gray-100 flex items-center gap-1 cursor-pointer group transition">
                   <span className="text-md p-0.5 bg-pink-500 text-white rounded-sm relative w-5 h-5 flex items-center justify-center">
                     <BiParty className="group-hover:hidden" />
                     <IoIosAdd className="hidden group-hover:block text-white text-lg" />
@@ -82,7 +81,7 @@ export default function TopBar({ setSideBar, sideBar }) {
                 </li>
 
                 {/* Site */}
-                <li className="px-4 py-2 rounded-2xl bg-gray-200 flex items-center gap-1 cursor-pointer group transition">
+                <li className="px-4 py-2 rounded-2xl bg-gray-100 flex items-center gap-1 cursor-pointer group transition">
                   <span className="text-md p-0.5 bg-indigo-400 text-white rounded-sm relative w-5 h-5 flex items-center justify-center">
                     <GoGlobe className="group-hover:hidden" />
                     <IoIosAdd className="hidden group-hover:block text-white text-lg" />
@@ -91,7 +90,7 @@ export default function TopBar({ setSideBar, sideBar }) {
                 </li>
 
                 {/* Make */}
-                <li className="px-3 py-2 rounded-2xl bg-gray-200 flex items-center gap-1 cursor-pointer group transition">
+                <li className="px-3 py-2 rounded-2xl bg-gray-100 flex items-center gap-1 cursor-pointer group transition">
                   <span className="text-md p-0.5 bg-black text-white rounded-sm relative w-5 h-5 flex items-center justify-center">
                     <GiLevelFour className="group-hover:hidden" />
                     <IoIosAdd className="hidden group-hover:block text-white text-lg" />
@@ -101,7 +100,7 @@ export default function TopBar({ setSideBar, sideBar }) {
               </ul>
 
               {/* Download Icon */}
-              <span className="p-2 rounded-full bg-gray-200 flex items-center text-lg hover:bg-gray-300 transition cursor-pointer">
+              <span className="p-2 rounded-full bg-gray-100 flex items-center text-lg hover:bg-gray-300 transition cursor-pointer">
                 <IoDownloadOutline />
               </span>
             </div>

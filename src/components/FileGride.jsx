@@ -1,6 +1,5 @@
 import FileCard from "./FileCard";
 
-// components/FileGrid.js
 export default function FileGrid() {
   const files = [
     {
@@ -8,66 +7,75 @@ export default function FileGrid() {
       title: "Untitled",
       description: "Edited 1 hour ago",
       type: "file",
-      color: "bg-gradient-to-br from-blue-400 to-purple-500",
+      image:
+        "/img1.jpg",
     },
     {
       id: 2,
       title: "Your Name Here",
-      description: "",
+      description: "Edited 2 days ago",
       type: "file",
-      color: "bg-gradient-to-br from-green-400 to-blue-500",
+      image:
+        "/img2.jpg",
     },
     {
       id: 3,
-      title: "Personal Portfolio Template (Comm...)",
+      title: "Personal Portfolio Template",
       description: "Edited 10 days ago",
       type: "file",
-      color: "bg-gradient-to-br from-yellow-400 to-orange-500",
+      image:
+        "/img3.png",
     },
     {
       id: 4,
-      title: "Design",
+      title: "Design Tags",
       description: "Fig Jam Stides Buzz Site Make",
       type: "tags",
-      color: "bg-gradient-to-br from-purple-400 to-pink-500",
+      image:
+        "/img4.png",
     },
     {
       id: 5,
-      title: "Fig Jam basics",
-      description: "Failed 1 hour ago",
-      type: "file",
-      color: "bg-gradient-to-br from-red-400 to-pink-500",
+      title: "Build your own team library",
+      description: "Team Library Edited 10 days ago",
+      type: "library",
+      image:
+        "/img5.png",
     },
+
     {
       id: 6,
-      title: "Build your own team library",
-      description: "Pankaj Kumar's team library Edited 10 days ago",
+      title: "Create your personal design hub",
+      description: "Design Library • Updated 2 days ago",
       type: "library",
-      color: "bg-gradient-to-br from-indigo-400 to-purple-500",
+      image:
+        "/img6.png",
     },
+
     {
       id: 7,
-      title: "Figma basics",
-      description: "Failed 1 hour ago",
-      type: "file",
-      color: "bg-gradient-to-br from-teal-400 to-green-500",
+      title: "Manage your shared project assets",
+      description: "Project Assets • Edited just now",
+      type: "library",
+      image:
+        "/img7.jpg",
     },
+
     {
       id: 8,
-      title: "Figma basics",
-      description: "Failed 1 hour ago",
-      type: "file",
-      color: "bg-gradient-to-br from-gray-400 to-gray-600",
+      title: "Collaborate on your component library",
+      description: "Component Hub • Updated 5 hours ago",
+      type: "library",
+      image:
+        "/img8.jpg",
     },
   ];
 
   return (
-    <>
-      <div className="grid grid-cols-1 min-h-screen md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4 gap-6">
-        {files.map((file) => (
-          <FileCard key={file.id} file={file} />
-        ))}
-      </div>
-    </>
+    <div className="grid grid-cols-1 min-h-screen md:grid-cols-2 lg:grid-cols-3 p-4 gap-6">
+      {files.map((file) => (
+        <FileCard key={file.id} file={file} />
+      ))}
+    </div>
   );
 }

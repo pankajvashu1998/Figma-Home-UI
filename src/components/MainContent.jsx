@@ -4,6 +4,7 @@ import { useState } from "react";
 import FileGrid from "./FileGride";
 import Sidebar from "./Sidebar";
 import TopBar from "./Topbar";
+import TopBottomNavbar from "./TopBottomNavbar";
 
 export default function MainContent() {
   const [sideBar, setSideBar] = useState(false);
@@ -13,6 +14,7 @@ export default function MainContent() {
 
       <div className=" min-h-screen overflow-y-auto w-full md:ml-[280px]">
         <TopBar setSideBar={setSideBar} sideBar={sideBar} />
+        <TopBottomNavbar/>
         <FileGrid />
       </div>
     </div>
