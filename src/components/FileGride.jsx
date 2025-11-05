@@ -72,7 +72,7 @@ export default function FileGrid() {
   ];
 
   return (
-    <div className="grid grid-cols-2 min-h-screen md:grid-cols-2 lg:grid-cols-3 p-4 gap-6">
+    <div className="grid grid-cols-1 m-1 sm:grid-cols-2 min-h-screen md:grid-cols-2 lg:grid-cols-3 p-4 gap-6">
       {files.map((file) => (
         <FileCard key={file.id} file={file} />
       ))}

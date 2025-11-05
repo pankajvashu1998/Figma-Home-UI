@@ -19,7 +19,7 @@ export default function Resources() {
       </div>
 
       {/* Template Cards Section */}
-      <div className="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm">
+      <div className="bg-gray-50 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-sm">
         {/* Cards */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
           {/* Card 1 */}

@@ -1,6 +1,6 @@
 export default function FileCard({ file }) {
   return (
-    <div className="bg-white shadow-sm border border-gray-200 rounded-xl overflow-hidden  transition cursor-pointer">
+    <div className="bg-white shadow-sm border-2 border-transparent hover:border-blue-400 rounded-xl overflow-hidden transition cursor-pointer duration-200">
       {/* Image */}
       <div className="h-40 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
         {file.image ? (
@@ -10,7 +10,9 @@ export default function FileCard({ file }) {
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="text-gray-500">{file.title.charAt(0)}</div>
+          <div className="text-gray-500 text-2xl font-semibold">
+            {file.title.charAt(0)}
+          </div>
         )}
       </div>
 
