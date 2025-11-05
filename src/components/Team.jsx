@@ -1,16 +1,33 @@
 "use client";
 import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
-import { MdOutlineArrowRightAlt, MdOutlineStar } from "react-icons/md";
+import {
+  MdArrowDropDown,
+  MdOutlineArrowRightAlt,
+  MdOutlineStar,
+} from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { MdDone } from "react-icons/md";
 import { FcBiohazard } from "react-icons/fc";
 import { PiSpinner } from "react-icons/pi";
 import { SiGooglecolab } from "react-icons/si";
+import { VscSettings } from "react-icons/vsc";
 import Link from "next/link";
 export default function Team() {
   const [isProject, setProduct] = useState(false);
+  const [isInviteLink, setInviteLink] = useState(false);
+  const url = window.location.href;
+
+  //copy link
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      alert("Link copied to clipboard");
+    } catch (err) {
+      alert("Failed to copy");
+    }
+  };
 
   // project modal
   if (isProject) {
@@ -145,6 +162,71 @@ export default function Team() {
     );
   }
 
+  // Link invite
+
+  if (isInviteLink) {
+    return (
+      <div className="w-full p-4 bg-black/60 fixed top-0 left-0 flex justify-center items-center min-h-screen">
+        <div className="max-w-lg w-full bg-white rounded-xl h-auto py-2  relative">
+          <div className=" w-full py-3 border-b border-gray-300">
+            <p className="text-sm text-gray-600 px-4">
+              Invite other to Pankaj Kumar's team
+            </p>
+            <span
+              onClick={() => setInviteLink(false)}
+              className="absolute right-3 top-3 text-xl text-black hover:bg-gray-100"
+            >
+              <IoClose />
+            </span>
+          </div>
+          <div className="p-4">
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Invite link</span>
+              <span className="hover:bg-gray-100 p-0.5">
+                <VscSettings />
+              </span>
+            </div>
+
+            <div className="flex justify-between items-center flex-col sm:flex-row gap-3 w-full">
+              <div className="py-2 text-sm px-3 w-full bg-gray-100 my-2 flex justify-between items-center rounded-sm">
+                {url}
+                <span className=" text-sm p-1 bg-white rounded-sm flex justify-center items-center">
+                  can edit
+                  <MdArrowDropDown className="text-lg" />
+                </span>
+              </div>
+              <button
+                onClick={handleCopyLink}
+                className="sm:w-[100px] w-full text-center  text-sm p-3 bg-blue-500 text-white rounded-sm"
+              >
+                Copy link
+              </button>
+            </div>
+
+            {/* invite via emai */}
+            <div className="flex justify-between items-center mt-3">
+              <span className="text-sm text-gray-600">Invite by email</span>
+              <span className="hover:bg-gray-100 p-0.5">
+                <VscSettings />
+              </span>
+            </div>
+
+            <div className="flex justify-between items-center flex-col sm:flex-row gap-3 w-full">
+              <input
+                type="text"
+                placeholder="Emails, comma seperate"
+                className="py-2 outline-blue-400  text-sm bg-gray-100 px-2 w-full rounded-sm"
+              />
+              <button className="sm:w-[100px] w-full text-center  text-sm p-3 bg-gray-300 text-white rounded-sm">
+                Invite
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen bg-white px-4 sm:px-8 py-6">
       {/* Top section */}
@@ -169,7 +251,10 @@ export default function Team() {
             <IoIosAdd className="text-lg" />
             Project
           </button>
-          <button className="border border-gray-300 hover:bg-gray-100 text-gray-700 text-sm  px-4 py-2 rounded-md">
+          <button
+            onClick={() => setInviteLink(true)}
+            className="border border-gray-300 hover:bg-gray-100 text-gray-700 text-sm  px-4 py-2 rounded-md"
+          >
             Share
           </button>
         </div>
