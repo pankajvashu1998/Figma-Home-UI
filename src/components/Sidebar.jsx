@@ -171,7 +171,7 @@ export default function Sidebar({ sideBar, setSideBar }) {
         </div>
 
         {/* Team Section */}
-        <div >
+        <div>
           <details className="relative max-w-md mx-auto p-3 transition-all duration-300">
             <summary className="cursor-pointer text-gray-800 text-[12px] flex justify-start items-center">
               <span className="h-4 w-4 rounded-full bg-pink-500 flex justify-center items-center text-white text-[8px]">
@@ -202,7 +202,7 @@ export default function Sidebar({ sideBar, setSideBar }) {
             </div>
           </details>
 
-          <div  className=" text-[12px]">
+          <div className=" text-[12px]">
             <Link
               href={"/draft"}
               className="w-full relative group flex items-center gap-2 px-3 py-2 hover:bg-gray-50 rounded-lg"
@@ -401,7 +401,10 @@ export default function Sidebar({ sideBar, setSideBar }) {
 
         {/* Navigation */}
         <div className="space-y-1 mb-2 border-b-2 border-gray-300 ">
-          <Link href={"/"} className="w-full flex items-center gap-3 px-3 py-2.5 bg-gray-100 rounded-lg text-[12px] font-medium">
+          <Link
+            href={"/"}
+            className="w-full flex items-center gap-3 px-3 py-2.5 bg-gray-100 rounded-lg text-[12px] font-medium"
+          >
             <MdOutlineWatchLater className="text-lg text-gray-700" /> Recents
           </Link>
           <button className="w-full flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 rounded-lg text-[12px]">
@@ -410,7 +413,7 @@ export default function Sidebar({ sideBar, setSideBar }) {
         </div>
 
         {/* Team Section */}
-        <div onClick={()=> setSideBar(!sideBar)}  className="">
+        <div onClick={() => setSideBar(!sideBar)} className="">
           <details className="relative max-w-md mx-auto p-3 transition-all duration-300">
             <summary className="cursor-pointer text-gray-800 text-[12px] flex justify-start items-center">
               <span className="h-4 w-4 rounded-full bg-pink-500 flex justify-center items-center text-white text-[8px]">
@@ -441,7 +444,7 @@ export default function Sidebar({ sideBar, setSideBar }) {
             </div>
           </details>
 
-          <div  className=" text-[12px]">
+          <div className=" text-[12px]">
             <Link
               href={"/draft"}
               className="w-full relative group flex items-center gap-2 px-3 py-2 hover:bg-gray-50 rounded-lg"

@@ -1,10 +1,150 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
-import { MdOutlineStar } from "react-icons/md";
+import { MdOutlineArrowRightAlt, MdOutlineStar } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
-
+import { IoClose } from "react-icons/io5";
+import { MdDone } from "react-icons/md";
+import { FcBiohazard } from "react-icons/fc";
+import { PiSpinner } from "react-icons/pi";
+import { SiGooglecolab } from "react-icons/si";
+import Link from "next/link";
 export default function Team() {
+  const [isProject, setProduct] = useState(false);
+
+  // project modal
+  if (isProject) {
+    return (
+      <div className="w-full p-4 min-h-screen flex justify-center items-center bg-black/60 fixed top-0 left-0 right-0">
+        <div className="w-full h-[450px] max-w-xl rounded-2xl bg-white relative p-5 overflow-y-auto">
+          <span
+            onClick={() => setProduct(false)}
+            className="absolute right-3 top-3 text-xl text-black hover:bg-gray-100"
+          >
+            <IoClose />
+          </span>
+          <div className="w-full">
+            <h1 className="text-2xl font-semibold mt-3 sm:mt-0">
+              Needs more project?
+            </h1>
+            <h2 className="text-gray-600 text-sm py-2">
+              The Starter plan only comes with 1 project, but getting more is
+              easy.
+            </h2>
+            <div className="flex h-full justify-center flex-col sm:flex-row  w-full rounded-xl border border-gray-200 overflow-hidden">
+              <div className="w-full p-6 border-r border-gray-200">
+                <div className="flex items-center gap-3 ">
+                  <h1 className="text-xl font-semibold ">Starter</h1>
+                  <span className="text-[10px] border text-gray-600 border-gray-200 p-0.5 rounded bg-gray-100">
+                    Current plan
+                  </span>
+                </div>
+
+                <h2 className="text-sm text-gray-600 py-1">
+                  Best for anyone who wants to sample Figma.
+                </h2>
+
+                <p className="text-sm pt-14 pb-2 border-b border-b-gray-300 text-gray-600">
+                  Free, but limited feature
+                </p>
+                <div>
+                  <ul className="text-sm my-4 text-gray-600">
+                    <li className="flex items-center gap-2 py-1">
+                      <span>
+                        <MdDone />
+                      </span>
+                      1 project
+                    </li>
+                    <li className="flex items-center gap-2 py-1">
+                      <span>
+                        <MdDone />
+                      </span>
+                      3 files to work in
+                    </li>
+                    <li className="flex items-center gap-2 py-1">
+                      <span>
+                        <MdDone />
+                      </span>
+                      3 pages per Figma design file
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-full p-6  border-gray-200">
+                <h1 className="text-xl font-semibold">Professional</h1>
+                <p className="text-gray-600 text-sm py-2">
+                  Best for small teams to create and colaborate
+                </p>
+                <div>
+                  <ul className="text-sm py-4 text-gray-600 w-full border-b border-b-gray-300">
+                    <li className="flex items-center justify-between gap-2 py-1">
+                      <span className="flex justify-center items-center gap-1">
+                        <FcBiohazard className="text-lg" />
+                        Full seat
+                      </span>
+
+                      <span>$16/mo</span>
+                    </li>
+                    <li className="flex items-center justify-between gap-2 py-1">
+                      <span className="flex justify-center items-center gap-1">
+                        <PiSpinner className="text-lg text-blue-600" />
+                        Dev seat
+                      </span>
+                      <span>$12/mo</span>
+                    </li>
+                    <li className="flex items-center justify-between gap-2 py-1">
+                      <span className="flex justify-center items-center gap-1">
+                        <SiGooglecolab className="text-lg text-purple-500" />
+                        Collab seat
+                      </span>
+                      <span>$3/mo</span>
+                    </li>
+                  </ul>
+
+                  <div>
+                    <ul className="text-sm mt-4 text-gray-600">
+                      <li className="flex items-center gap-2 py-1">
+                        <span>
+                          <MdDone />
+                        </span>
+                        Unlimited project
+                      </li>
+                      <li className="flex items-center gap-2 py-1">
+                        <span>
+                          <MdDone />
+                        </span>
+                        Unlimited files
+                      </li>
+                      <li className="flex items-center gap-2 py-1">
+                        <span>
+                          <MdDone />
+                        </span>
+                        Unlimited pages in Figma design file
+                      </li>
+                    </ul>
+
+                    <Link
+                      href={"/"}
+                      className="flex items-center gap-2 py-1 text-blue-500 text-sm px-5"
+                    >
+                      See all features{" "}
+                      <MdOutlineArrowRightAlt className="text-xl" />
+                    </Link>
+
+                    <button className="text-sm py-1 w-full my-3 bg-blue-500 text-white rounded-sm">
+                      Upgrade to Professional
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen bg-white px-4 sm:px-8 py-6">
       {/* Top section */}
@@ -12,23 +152,24 @@ export default function Team() {
         {/* Left - Team Name */}
         <div className="flex items-center gap-3">
           <div className="bg-pink-500 text-white rounded-md p-2 text-xl">
-            <FaUserFriends/>
+            <FaUserFriends />
           </div>
           <h1 className="text-xl sm:text-2xl  text-gray-800">
             Pankaj Kumar's team
           </h1>
-          <span className="text-gray-500 text-sm cursor-pointer">
-            ▼
-          </span>
+          <span className="text-gray-500 text-sm cursor-pointer">▼</span>
         </div>
 
         {/* Right - Buttons */}
         <div className="flex items-center gap-3 mt-4 sm:mt-0">
-          <button className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm sm:text-base font-medium px-4 py-2 rounded-md">
+          <button
+            onClick={() => setProduct(true)}
+            className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm  px-4 py-2 rounded-md"
+          >
             <IoIosAdd className="text-lg" />
             Project
           </button>
-          <button className="border border-gray-300 hover:bg-gray-100 text-gray-700 text-sm sm:text-base font-medium px-4 py-2 rounded-md">
+          <button className="border border-gray-300 hover:bg-gray-100 text-gray-700 text-sm  px-4 py-2 rounded-md">
             Share
           </button>
         </div>
