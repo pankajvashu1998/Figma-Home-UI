@@ -11,6 +11,7 @@ import { IoIosAdd } from "react-icons/io";
 import { FaBars } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 export default function TopBar({ setSideBar, sideBar }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,7 +32,8 @@ export default function TopBar({ setSideBar, sideBar }) {
               onClick={() => setSideBar(!sideBar)}
               className="md:hidden cursor-pointer text-xl"
             >
-              <FaBars />
+              {!sideBar ?  <FaBars /> :  <IoClose />}
+             
             </span>
             <h1 className="text-[14px]">Recents</h1>
           </div>
