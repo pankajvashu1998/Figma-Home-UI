@@ -401,9 +401,9 @@ export default function Sidebar({ sideBar, setSideBar }) {
 
         {/* Navigation */}
         <div className="space-y-1 mb-2 border-b-2 border-gray-300 ">
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 bg-gray-100 rounded-lg text-[12px] font-medium">
+          <Link href={"/"} className="w-full flex items-center gap-3 px-3 py-2.5 bg-gray-100 rounded-lg text-[12px] font-medium">
             <MdOutlineWatchLater className="text-lg text-gray-700" /> Recents
-          </button>
+          </Link>
           <button className="w-full flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 rounded-lg text-[12px]">
             <PiBookOpenUser className="text-lg text-gray-700" /> Community
           </button>
