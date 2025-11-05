@@ -1,7 +1,8 @@
 // app/layout.js
-import Sidebar from "@/components/Sidebar";
+
 import "./globals.css";
-import TopBar from "@/components/Topbar";
+
+import MainContent from "@/components/MainContent";
 
 export const metadata = {
   title: "Figma Dashboard",
@@ -12,10 +13,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#F5F5F5] text-[#1A1A1A] font-sans relative">
-        {/* Main Content */}
-        <main>
-          {children}
-        </main>
+        <MainContent />
+        <main>{children}</main>
       </body>
     </html>
   );

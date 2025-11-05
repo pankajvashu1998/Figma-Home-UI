@@ -8,40 +8,36 @@ import { GiLevelFour } from "react-icons/gi";
 import { IoDownloadOutline } from "react-icons/io5";
 import { FiPenTool } from "react-icons/fi";
 import { IoIosAdd } from "react-icons/io";
-import { FiMenu } from "react-icons/fi";
-import { IoClose } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function TopBar({ setSideBar, sideBar }) {
-  const [openSide, setSideOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full ">
+    <div className="relative w-full">
+      {/* Help Button (bottom-right) */}
       <button className="fixed bottom-7 right-7 z-50 h-8 w-8 rounded-full bg-black flex justify-center items-center text-white">
         <FaQuestion />
       </button>
+
       {/* TopBar */}
-      <div
-        className={`bg-white sticky top-0 z-50 border-b border-gray-200 px-4 py-3  w-full transition-all duration-300 ${
-          open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-        }`}
-      >
-        <div className="flex  sm:flex-row  sm:items-center justify-between gap-3 max-w-7xl mx-auto">
-          {/* Title */}
-          <div className="flex justify-center items-center  gap-3">
+      <div className="bg-white fixed top-0 md:static z-50 border-b border-gray-200 px-4 py-3 w-full">
+        <div className="flex sm:flex-row sm:items-center justify-between gap-3 max-w-7xl mx-auto">
+          {/* Left Section */}
+          <div className="flex items-center gap-3">
             <span
               onClick={() => setSideBar(!sideBar)}
-              className="md:hidden cursor-pointer"
+              className="md:hidden cursor-pointer text-xl"
             >
               <FaBars />
             </span>
-            <h1 className="text-[14px] ">Recents</h1>
+            <h1 className="text-[14px]">Recents</h1>
           </div>
 
-          {/* Right Side */}
-          <div className="hidden flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 w-full sm:w-auto  lg:block">
+          {/* Right Section (Desktop) */}
+          <div className="hidden lg:block">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <ul className="flex flex-wrap justify-start text-[12px] items-center gap-2">
                 {/* Design */}
@@ -99,23 +95,60 @@ export default function TopBar({ setSideBar, sideBar }) {
                 </li>
               </ul>
 
-              {/* Download Icon */}
+              {/* Download */}
               <span className="p-2 rounded-full bg-gray-100 flex items-center text-lg hover:bg-gray-300 transition cursor-pointer">
                 <IoDownloadOutline />
               </span>
             </div>
           </div>
-          <div className="text-sm lg:hidden cursor-pointer flex justify-center items-center gap-2 bg-blue-500 px-5 py-2 text-white rounded-sm">
+
+          {/* Mobile "Create" button */}
+          <div
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-sm lg:hidden cursor-pointer flex justify-center items-center gap-2 bg-blue-500 px-5 py-2 text-white rounded-sm"
+          >
             <span className="text-xl">
               <IoIosAdd />
             </span>
             Create
-            <span className="text-xl">
+            <span
+              className={`text-xl transition-transform duration-300 ${
+                menuOpen ? "rotate-180" : "rotate-0"
+              }`}
+            >
               <MdKeyboardArrowDown />
             </span>
           </div>
         </div>
       </div>
+
+      {/* ✅ Mobile Create Menu Card */}
+      {menuOpen && (
+        <div className="absolute top-[60px] right-0 w-full z-40 flex justify-end px-6 md:hidden">
+          <div className="bg-white shadow-lg rounded-xl p-4 w-[90%] max-w-[200px] border border-gray-200">
+            <ul className="flex flex-col gap-3 text-sm">
+              <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                <FiPenTool className="text-blue-500" /> Design
+              </li>
+              <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                <GrDocument className="text-purple-500" /> FigJam
+              </li>
+              <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                <TfiBlackboard className="text-orange-400" /> Slides
+              </li>
+              <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                <BiParty className="text-pink-500" /> Buzz
+              </li>
+              <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                <GoGlobe className="text-indigo-400" /> Site
+              </li>
+              <li className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                <GiLevelFour className="text-black" /> Make
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

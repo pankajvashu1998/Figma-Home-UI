@@ -1,15 +1,11 @@
-// app/page.js
 
-import MainContent from "@/components/MainContent";
-import Sidebar from "@/components/Sidebar";
+
+import FileGrid from "@/components/FileGride";
 
 export default function Home() {
   return (
-    <div>
-      {/* Main Content */}
-      <div className="">
-        <MainContent />
-      </div>
+    <div className="md:ml-[280px] m-0">
+      <FileGrid />
     </div>
   );
 }

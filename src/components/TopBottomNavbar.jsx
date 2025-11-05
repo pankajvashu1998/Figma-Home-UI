@@ -9,7 +9,7 @@ const TopBottomNavbar = () => {
   const tabs = ["Recently viewed", "Shared files", "Shared projects"];
 
   return (
-    <div className="w-full border-b border-gray-200 bg-white px-4 py-3">
+    <div className="w-full mt-[60px] md:mt-0 border-b border-gray-200 bg-white px-4 py-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
         {/* Left Tabs */}
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
