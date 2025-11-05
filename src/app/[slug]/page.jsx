@@ -7,8 +7,6 @@ import Resources from "@/components/Resoueces";
 import TrashPage from "@/components/Trash";
 const page = () => {
   const path = usePathname();
-  console.log(path);
-
   return (
     <div className="md:ml-[280px] ml-0">
       {path === "/team" && <Team />}
