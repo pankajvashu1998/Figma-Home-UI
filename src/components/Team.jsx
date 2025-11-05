@@ -84,7 +84,7 @@ export default function Team() {
         <div className="border border-gray-200 rounded-2xl p-4 hover:shadow-md transition">
           <div className="bg-gray-50 rounded-xl h-40 mb-3 overflow-hidden relative">
             <img
-              src="https://via.placeholder.com/300x150"
+              src="/img3.png"
               alt="Project thumbnail"
               className="w-full h-full object-cover rounded-xl"
             />
