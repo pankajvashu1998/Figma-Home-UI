@@ -165,9 +165,9 @@ export default function Sidebar({ sideBar, setSideBar }) {
           >
             <MdOutlineWatchLater className="text-lg text-gray-700" /> Recents
           </Link>
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 rounded-lg text-[12px]">
+          <Link href={"/community"} className="w-full flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 rounded-lg text-[12px]">
             <PiBookOpenUser className="text-lg text-gray-700" /> Community
-          </button>
+          </Link>
         </div>
 
         {/* Team Section */}

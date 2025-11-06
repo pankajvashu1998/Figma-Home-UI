@@ -5,6 +5,7 @@ import Team from "@/components/Team";
 import FileGrid from "@/components/FileGride";
 import Resources from "@/components/Resoueces";
 import TrashPage from "@/components/Trash";
+import Community from "@/components/Community";
 const page = () => {
   const path = usePathname();
   return (
@@ -13,6 +14,7 @@ const page = () => {
       {path === "/draft" && <FileGrid />}
       {path === "/resource" && <Resources />}
       {path === "/trash" && <TrashPage />}
+      {path === "/community" && <Community />}
     </div>
   );
 };

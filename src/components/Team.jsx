@@ -32,7 +32,7 @@ export default function Team() {
   // project modal
   if (isProject) {
     return (
-      <div className="w-full p-4 min-h-screen flex justify-center items-center bg-black/60 fixed top-0 left-0 right-0">
+      <div className="w-full p-4 min-h-screen flex justify-center items-center bg-black/60 fixed top-0 left-0 right-0 animate__animated animate__fadeIn">
         <div className="w-full h-[450px] max-w-xl rounded-2xl bg-white relative p-5 overflow-y-auto">
           <span
             onClick={() => setProduct(false)}
@@ -166,7 +166,7 @@ export default function Team() {
 
   if (isInviteLink) {
     return (
-      <div className="w-full p-4 bg-black/60 fixed top-0 left-0 flex justify-center items-center min-h-screen">
+      <div className="w-full p-4 bg-black/60 fixed top-0 left-0 flex justify-center items-center min-h-screen animate__animated animate__fadeIn">
         <div className="max-w-lg w-full bg-white rounded-xl h-auto py-2  relative">
           <div className=" w-full py-3 border-b border-gray-300">
             <p className="text-sm text-gray-600 px-4">
@@ -228,7 +228,7 @@ export default function Team() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-white px-4 sm:px-8 py-6">
+    <div className="w-full min-h-screen bg-white px-4 sm:px-8 py-6 animate__animated animate__fadeIn">
       {/* Top section */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         {/* Left - Team Name */}
@@ -326,7 +326,7 @@ export default function Team() {
 
         {/* Upgrade Card */}
         <div className="border border-gray-200 rounded-2xl p-4 bg-gray-50 hover:shadow-md transition flex flex-col justify-center items-center text-center">
-          <div className="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl mb-3">
+          <div onClick={()=> setProduct(true)} className="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl mb-3">
             <IoIosAdd />
           </div>
           <h2 className="text-sm sm:text-base font-medium text-gray-800">

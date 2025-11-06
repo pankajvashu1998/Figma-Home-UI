@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Resources() {
   return (
-    <div className="w-full min-h-screen bg-white p-4">
+    <div className="w-full min-h-screen bg-white p-4 animate__animated animate__fadeIn">
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         <h1 className="text-2xl font-semibold text-gray-800 mb-4 sm:mb-0">
