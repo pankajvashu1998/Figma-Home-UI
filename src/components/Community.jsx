@@ -73,7 +73,7 @@ const Community = () => {
         {tabs.map((tab, idx) => (
           <button
             key={idx}
-            className="text-sm py-2 px-6 border border-gray-300 m-1 w-full sm:w-auto rounded-sm flex items-center justify-center gap-2 hover:bg-gray-50 transition"
+            className="text-sm text-left py-2 px-6 border border-gray-300 m-1 w-auto rounded-sm flex items-center justify-center gap-2 hover:bg-gray-50 transition"
           >
             <span className="text-gray-700">{tab.icon}</span>
             <span>{tab.title}</span>
