@@ -90,7 +90,7 @@ const Community = () => {
               key={index}
               className="border border-gray-300 rounded-sm overflow-hidden"
             >
-              <div className="h-[200px] w-full overflow-hidden">
+              <div className="h-40 flex justify-center items-center w-full overflow-hidden">
                 <img
                   src={value.image}
                   alt={value.image}
