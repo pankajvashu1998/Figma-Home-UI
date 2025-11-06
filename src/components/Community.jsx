@@ -98,11 +98,11 @@ const Community = () => {
                 />
               </div>
               <div className="flex justify-center items-center flex-col bg-gray-100 py-6">
-                <div className="flex justify-center items-center">
-                  <div></div>
-                  <div>
+                <div className="flex justify-center items-center p-2">
+                  
+                  <div className="text-center">
                     <div>{value.title}</div>
-                    <div></div>
+                    
                   </div>
                 </div>
               </div>
