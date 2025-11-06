@@ -94,7 +94,7 @@ const Community = () => {
                 <img
                   src={value.image}
                   alt={value.image}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex justify-center items-center flex-col bg-gray-100 py-6">
