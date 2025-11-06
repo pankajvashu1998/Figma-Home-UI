@@ -16,9 +16,9 @@ export default function MainContent() {
       <Sidebar sideBar={sideBar} setSideBar={setSideBar} />
 
       <div className=" w-full md:ml-[280px]">
-        {pathname === "/" || pathname === "/draft"  ? (
+        <TopBar setSideBar={setSideBar} sideBar={sideBar} />
+        {pathname === "/" || pathname === "/draft" ? (
           <>
-            <TopBar setSideBar={setSideBar} sideBar={sideBar} />
             <TopBottomNavbar />
           </>
         ) : (
